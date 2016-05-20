@@ -1175,7 +1175,7 @@
 }
 
 @article{SamaddarEtAl2010,
-	author = {Samaddar, Debasmita and Newman, David E. and Sánchez, Raul S.},
+	author = {Samaddar, Debasmita and Newman, David E. and S\'{a}nchez, Raul S.},
 	issue = {18},
 	journal = {Journal of Computational Physics},
 	pages = {6558--6573},
@@ -2137,6 +2137,16 @@
 	year = {2015},
 }
 
+@inproceedings{CarracciuoloEtAl2015,  
+        abstract = {{We consider linear systems that arise from the discretization of evolutionary models. Typically, solution algorithms are based on a time-stepping approach, solving for one time step after the other. Parallelism is limited to the spatial dimension only. Because time is sequential in nature, the idea of simultaneously solving along time steps is not intuitive. One approach to achieve parallelism in time direction is MGRIT algorithm [7], based on multigrid reduction (MGR) techniques. Here we refer to this approach as MGR-1D. Other kind of approach is the space-time multigrid, where time is simply another dimension in the grid. Analougsly, we refer to this approach as MGR-4D. In this work, motivated by the need of maximizing the availability of new algorithms to climate science, we propose a new parallel approach that mixes both the MGR-1D idea and classical space multigrid methods. We refer to it as the MGR3D+1 approach. Moreover, we discuss their implementation in the high performance scientific library PETSc, as starting point to develope more efficient and scalable algorithms in ocean models.}}, 
+        author = {L. Carracciuolo and L. D'Amore and V. Mele},         
+        booktitle = {High Performance Computing Simulation (HPCS), 2015 International Conference on}, 
+        pages = {595-598},         
+        title = {Toward a fully parallel multigrid in time algorithm in PETSc environment: A case study in ocean models}, 
+        url = {http://dx.doi.org/10.1109/HPCSim.2015.7237098}, 
+        year = {2015}, 
+}
+
 @unpublished{FalgoutEtAl2015,
 	abstract = {{We consider the comparison of multigrid methods for parabolic partial differential equations that allow
 		space-time concurrency.
@@ -2199,7 +2209,7 @@
 	editors = {Carraro, T. and Geiger, M. and K\"orkel, S. and Rannacher, R.},
 	publisher = {Springer},
 	title = {{50 years of Time Parallel Time Integration}},
-	url = {{http://www.unige.ch/%7Egander/Preprints/50YearsTimeParallel.pdf}},
+	url = {http://dx.doi.org/10.1007/978-3-319-23321-5_3},
 	year = {2015},
 }
 
@@ -2224,6 +2234,16 @@
 	title = {{Parareal in Time for Dynamic Simulations of Power Systems}},
 	url = {http://www.ipstconf.org/papers/Proc_IPST2015/15IPST073.pdf},
 	year = {2015},
+}
+
+@article{HautEtAl2015,
+        abstract ={{The manuscript presents a technique for efficiently solving the classical wave equation, the shallow water equations, and, more generally, equations of the form $\partial u /\partial t = \mathcal {L}u$, where $\mathcal {L}$ is a skew-Hermitian differential operator. The idea is to explicitly construct an approximation to the time-evolution operator $\exp (\tau \mathcal {L})$ for a relatively large time-step $\tau $. Recently developed techniques for approximating oscillatory scalar functions by rational functions, and accelerated algorithms for computing functions of discretized differential operators are exploited. Principal advantages of the proposed method include: stability even for large time-steps, the possibility to parallelize in time over many characteristic wavelengths and large speed-ups over existing methods in situations where simulation over long times are required. Numerical examples involving the 2D rotating shallow water equations and the 2D wave equation in an inhomogenous medium are presented, and the method is compared to the 4th order Runge?Kutta (RK4) method and to the use of Chebyshev polynomials. The new method achieved high accuracy over long-time intervals, and with speeds that are orders of magnitude faster than both RK4 and the use of Chebyshev polynomials.}}, 
+        author = {Haut, T. S. and Babb, T. and Martinsson, P. G. and Wingate, B. A.}, 
+        doi = {10.1093/imanum/drv021},         
+        journal = {IMA Journal of Numerical Analysis},
+        url = {http://dx.doi.org/10.1093/imanum/drv021}, 
+        title = {A high-order time-parallel scheme for solving wave propagation problems via the direct construction of an approximate time-evolution operator},
+        year = {2015}, 
 }
 
 @unpublished{KooijEtAl2015,
@@ -2326,18 +2346,10 @@
 }
 
 @unpublished{Ruprecht2015,
-	abstract = {{The paper presents a comparison between MPI and OpenMP implementations of the parallel-in-time
-		integration method Parareal.
-		A special-purpose, lightweight FORTRAN code is described, which serves as a benchmark.
-		To allow for a fair comparison, an OpenMP implementation of Parareal with pipelining is introduced, which relies
-		on manual control of locks for synchronisation.
-		Performance is compared in terms of runtime, speedup, memory footprint and energy-to-solution.
-		The pipelined shared memory implementation is found to be the most efficient, particularly with respect to
-		memory footprint.
-		Its higher implementation complexity, however, might make it difficult to use in legacy codes.}},
+	abstract = {{The paper introduces an OpenMP implementation of pipelined Parareal and compares it to a standard MPI-based implementation. Both versions yield essentially identical runtimes, but, depending on the compiler, the OpenMP variant consumes about 7\% less energy. However, its key advantage is a significantly smaller memory footprint. The higher implementation complexity, including manual control of locks, might make it difficult to use in legacy codes, though}},
 	author = {Ruprecht, Daniel},
 	howpublished = {arXiv:1509.06935 [cs.MS]},
-	title = {{Implementing Parareal - OpenMP or MPI?}},
+	title = {{A shared memory implementation of pipelined Parareal}},
 	url = {http://arxiv.org/abs/1509.06935},
 	year = {2015},
 }
@@ -2504,6 +2516,19 @@
         year = {2016},
 }
 
+@article{Astorino2016,
+        abstract ={{In this work, we propose a new numerical procedure for the simulation of time-dependent problems based on the coupling between the finite element method (FEM) and the lattice Boltzmann method. The procedure exploits the Parareal paradigm to efficiently couple the two numerical methods, allowing independent grid size and time-step size. The motivations behind this approach are wide-ranging. In particular, one technique may be more efficient or physically more appropriate or less memory consuming than the other depending on the target of the simulation and/or on the sub-region of the computational domain. Furthermore, the coupling with FEM may circumvent some difficulties inherent to lattice Boltzmann discretization, for some domains with complex boundaries, or for some kind of boundary conditions. The theoretical and numerical framework is presented for the time-dependent heat equation in order to describe and validate numerically the methodology in a simple situation.}}, 
+        author = {Astorino, Matteo and Chouly, Franz and Quarteroni, Alfio}, 
+        journal = {Applied Mathematics Research eXpress},
+        title = {A Time-Parallel Framework for Coupling Finite Element and Lattice Boltzmann Methods},
+        url = {http://dx.doi.org/10.1093/amrx/abv009}, 
+        volume = {2016}, 
+        number = {1}, 
+        pages = {24-67},         
+        year = {2016},         
+}
+
+
 @phdthesis{Beck2016,
 	abstract = {{This work investigates the potential of an in-time parallelization of atmospheric chemical kinetics. Its numerical calculation is one time-consuming step within the numerical prediction of the air quality. The widely used parallelization strategies only allow a limited potential level of parallelism. A higher level of parallelism within the codes will be necessary to enable benefits from future exa-scale computing architectures. In air quality prediction codes, chemical kinetics is typically considered to react in isolated boxes over short splitting intervals. This allows their trivial parallelization in space, which however is limited by the number of grid entities. This work pursues a parallelization beyond this trivial potential and investigates a parallelization across time using the so called ``parareal algorithm''. The latter is an iterative prediction-correction scheme, whose efficiency strongly depends on the choice of the predictor. For that purpose, different options are being investigate and compared: Time-stepping schemes with fixed step size, adaptive time-stepping schemes and repro-models, functional representations, that map a given state to a later state in time. Only the choice of repromodels leads to a speed-up through parallelism, compared to the sequential reference for the scenarios considered here.}},
 	author = {Beck, Teresa},
@@ -2538,6 +2563,15 @@
 	title = {Parallel-In-Time For Moving Meshes}, 
 	url = {http://www.osti.gov/scitech/servlets/purl/1239230}, 
 	year={2016},
+}
+
+@unpublished{Guetat2016,
+	abstract = {{In this paper, we present a new parallel algorithm for time dependent problems based on coupling parareal with non-overlapping domain decomposition method in order to increase parallelism in time and in space. For this we focus on the iterative methods of parallization in space to solve the interface problem like Neumann-Neumann method. In the new algorithm, the coarse temporel propagator is defined on the global domain and the Neumann-Neumann method is chosen as a fine propagator with a few iterations. We present the rigorous convergence analysis of the new coupled algorithm on bounded time interval. Numerical experiments illustrate the performance of this new algorithm and confirm our analysis.}},
+	author = {Guetat, Rim},
+	howpublished = {hal-01312528},
+	url = {https://hal.archives-ouvertes.fr/hal-01312528/},
+	title = {Coupling Parareal with Non-Overlapping Domain Decomposition Method},
+	year = {2016}
 }
 
 @article{Lederman2016,
@@ -2578,6 +2612,14 @@ and geometry is explored.}},
         year = {2016},
 }
 
+@unpublished{SchreiberEtAl2016,
+	abstract = {{AbstractThis paper presents, discusses and analyses a massively parallel-in-time solver for linear oscillatory PDEs, whichis a key numerical component for evolving weather, ocean, climate and seismic models. The time parallelization inthis solver allows us to significantly exceed the computing resources used by parallelization-in-space methods andresults in a correspondingly significantly reduced wall-clock time. One of the major difficulties of achieving Exascaleperformance for weather prediction is that the strong scaling limit ? the parallel performance for a fixed problem sizewith an increasing number of processors ? saturates. A main avenue to circumvent this problem is to introduce newnumerical techniques that take advantage of time parallelism. In this paper we use a time-parallel approximation thatretains the frequency information of oscillatory problems. This approximation is based on (a) reformulating the originalproblem into a large set of independent terms and (b) solving each of these terms independent of each other whichcan now be accomplished on a large number of HPC resources. Our results are conducted on up to 3586 cores forproblem sizes with a parallelization-in-space scalability limited already on a single node. We gain significant reductionsin the time-to-solution of 118.3 for spectral methods and 1503.0 for finite-difference methods with the parallelization-in-time approach. A developed and validated performance model gives the scalability limitations a-priory for this newapproach and allows us to extrapolate the performance method towards large-scale system. This work has the potentialto contribute as a basic building block of parallelization-in-time approaches, with possible major implications in appliedareas modelling oscillatory dominated problems.}},
+	author = {Schreiber, Martin and Peixoto, Pedro S. and Haut, Terry and Wingate, Beth},
+	title = {Beyond spatial scalability limitations with a massively parallel method for linear oscillatory problems},
+	url = {http://www.ime.usp.br/%7epedrosp/wp/wordpress/wp-content/uploads/2015/05/paper_2016_rexi_hpc.pdf},
+	year = {2016}
+}
+
 @article{Wu2016,
         title = {A second-order parareal algorithm for fractional {PDEs}},
         journal = {Journal of Computational Physics},
@@ -2587,4 +2629,16 @@ and geometry is explored.}},
         url = {http://dx.doi.org/10.1016/j.jcp.2015.12.007},
         doi = {10.1016/j.jcp.2015.12.007},
         author = {Shu-Lin Wu},
+}
+
+@Article{Wu2016_JSC,
+        author = {Wu, Shu-Lin},
+        doi = {10.1007/s10915-015-0100-x},
+        journal = {Journal of Scientific Computing},
+        number = {2},
+        pages = {644--668},
+        title = {Convergence Analysis of the Parareal-Euler Algorithm for Systems of ODEs with Complex Eigenvalues},
+        url = {http://dx.doi.org/10.1007/s10915-015-0100-x},
+        volume = {67},
+        year = {2016},
 }
